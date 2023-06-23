@@ -4,11 +4,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 public class Oauth implements CommandExecutor {
 
-    public void launchCommand() {
-
+    private static Plugin plugin;
+    public static void setPlugin(Plugin plugin) {
+        Oauth.setPlugin(plugin);
     }
 
     @Override
