@@ -5,6 +5,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.IOException;
+
 public class Main extends JavaPlugin {
 
     public static Player player = Bukkit.getPlayer("Sandro642");
@@ -15,7 +17,11 @@ public class Main extends JavaPlugin {
 
 
         OauthAPI.getOauth().setStatus(true);
-        OauthAPI.getOauth().launchData();
+        try {
+            OauthAPI.getOauth().launchData();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         OauthAPI.getOauth().oauthGui(player);
     }
 

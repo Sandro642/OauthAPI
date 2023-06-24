@@ -1,6 +1,5 @@
 package fr.sandro642.github.yaml;
 
-import fr.sandro642.github.commands.Oauth;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
@@ -8,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class RegisterYaml {
-    private static File file = new File(plugin.getDataFolder(), "playerdatasecret.yml");
+
     private FileConfiguration configuration;
 
     private static Plugin plugin;
@@ -16,12 +15,17 @@ public class RegisterYaml {
         RegisterYaml.setPlugin(plugin);
     }
 
-    public static void registerYamlStatus() throws IOException, IOException{
+    public static void registerYamlStatus() throws IOException {
+        File file = new File(plugin.getDataFolder(), "datastatus.yml");
+
         plugin.getDataFolder().mkdirs();
         file.createNewFile();
     }
 
-    public static void registerYamlSecret() {
+    public static void registerYamlSecret() throws IOException {
+        File file = new File(plugin.getDataFolder(), "playerdatasecret.yml");
 
+        plugin.getDataFolder().mkdirs();
+        file.createNewFile();
     }
 }

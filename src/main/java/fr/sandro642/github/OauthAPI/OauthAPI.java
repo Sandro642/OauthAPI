@@ -6,6 +6,8 @@ import fr.sandro642.github.yaml.RegisterYaml;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.io.IOException;
+
 public class  OauthAPI {
 
     private static OauthAPI instance;
@@ -25,7 +27,9 @@ public class  OauthAPI {
         OauthGui.openGui(player);
     }
 
-    public void launchData() {
+    public void launchData() throws IOException {
+        RegisterYaml.registerYamlStatus();
+        RegisterYaml.registerYamlSecret();
         plugin.getServer().getPluginCommand("oauth").setExecutor(new Oauth());
     }
 
