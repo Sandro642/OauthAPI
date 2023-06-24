@@ -2,6 +2,7 @@ package fr.sandro642.github.OauthAPI;
 
 import fr.sandro642.github.commands.Oauth;
 import fr.sandro642.github.misc.OauthGui;
+import fr.sandro642.github.yaml.RegisterYaml;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -13,6 +14,7 @@ public class  OauthAPI {
     public OauthAPI(Plugin plugin) {
         this.plugin = plugin;
         Oauth.setPlugin(plugin);
+        RegisterYaml.setPlugin(plugin);
     }
 
     public void setStatus(boolean status) {
