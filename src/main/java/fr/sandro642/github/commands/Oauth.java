@@ -18,8 +18,37 @@ public class Oauth implements CommandExecutor {
         if (sender instanceof Player) return true;
         Player player = (Player) sender;
 
-        if (cmd.getName().equalsIgnoreCase("oauth")) {
-            // Put code here
+        if (label.equalsIgnoreCase("oauth")) {
+            if (args.length == 1) {
+                if (args[0].equalsIgnoreCase("gui")) {
+                    //OauthAPI.getOauth().oauthGui(player);
+
+                    /**
+                     * @TODO Create gui
+                     * Not available for moment
+                     */
+                }
+
+                if (args[0].equalsIgnoreCase("status")) {
+                    //OauthAPI.getOauth().setStatus(true);
+                }
+
+                if (args[0].equalsIgnoreCase("register")) {
+
+                }
+
+                if (args[0].equalsIgnoreCase("secret")) {
+                    if (player.hasPermission("oauth.admin")) return true;
+
+                    if (args[0].equalsIgnoreCase("data")) {
+
+                    }
+
+                    if (args[0].equalsIgnoreCase("admin")) {
+
+                    }
+                }
+            }
         }
         return false;
     }

@@ -10,6 +10,13 @@ import org.bukkit.inventory.ItemStack;
 import java.util.UUID;
 
 public class OauthGui {
+
+    /**
+     * This technology is not available for now.
+     * @param value
+     * @return
+     */
+
     public static ItemStack getHead(String value) {
         ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1, (short) SkullType.PLAYER.ordinal());
         UUID hashAsId = new UUID(value.hashCode(), value.hashCode());
@@ -40,6 +47,8 @@ public class OauthGui {
         Gui.setItem(30, zerosept);
         Gui.setItem(31, zerohuit);
         Gui.setItem(32, zeroneuf);
+
+
 
 
         p.openInventory(Gui);

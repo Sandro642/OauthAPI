@@ -5,7 +5,7 @@ import fr.sandro642.github.misc.OauthGui;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-public class OauthAPI {
+public class  OauthAPI {
 
     private static OauthAPI instance;
 
