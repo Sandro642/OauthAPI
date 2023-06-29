@@ -1,10 +1,13 @@
 package fr.sandro642.github.commands;
 
+import fr.sandro642.github.yaml.RegisterYaml;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+
+import java.util.List;
 
 public class Oauth implements CommandExecutor {
 
@@ -34,6 +37,13 @@ public class Oauth implements CommandExecutor {
                 }
 
                 if (args[0].equalsIgnoreCase("register")) {
+
+                   // String key = args[1];
+
+                   // List<String> uuids = RegisterYaml.configyamlplayerdatasecret.getStringList("players");
+
+                   // if() {
+                   // }
 
                 }
 
