@@ -1,5 +1,6 @@
 package fr.sandro642.github.commands;
 
+import fr.sandro642.github.OauthAPI.OauthAPI;
 import fr.sandro642.github.yaml.RegisterYaml;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,6 +21,8 @@ public class Oauth implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        String key = args[1];
+
         if (sender instanceof Player) return true;
         Player player = (Player) sender;
 
@@ -36,18 +39,31 @@ public class Oauth implements CommandExecutor {
                 }
 
                 if (args[0].equalsIgnoreCase("status")) {
-                    //OauthAPI.getOauth().setStatus(true);
+                    if (key.equals(true)) {
+                        OauthAPI.getOauth().setStatus(true);
+                    } else {
+                        OauthAPI.getOauth().setStatus(false);
+                    }
                 }
 
                 if (args[0].equalsIgnoreCase("register")) {
 
-                   String key = args[1];
-
                    List<String> data = RegisterYaml.configyamlplayerdatasecret.getStringList("key");
+
+                    /**
+                     * @TODO Add key in list
+                     */
+
 
                     if(!data.contains(key)) {
                         data.add(key);
                     }
+
+                    /**
+                     * @TODO send Message confirmation
+                     */
+
+                    player.sendTitle("§aSuccess", "§aYour key has been added", 10, 10, 10);
 
                 }
 
