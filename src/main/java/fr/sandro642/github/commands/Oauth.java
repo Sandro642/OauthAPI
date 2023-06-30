@@ -10,14 +10,14 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.List;
 
-import static fr.sandro642.github.yaml.RegisterYaml.configuration;
-
 public class Oauth implements CommandExecutor {
 
     private static Plugin plugin;
     public static void setPlugin(Plugin plugin) {
         Oauth.setPlugin(plugin);
     }
+
+    private static List<String> data = RegisterYaml.configyamlplayerdatasecret.getStringList("key");
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -48,7 +48,7 @@ public class Oauth implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("register")) {
 
-                   List<String> data = RegisterYaml.configyamlplayerdatasecret.getStringList("key");
+
 
                     /**
                      * @TODO Add key in list
@@ -69,11 +69,22 @@ public class Oauth implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("secret")) {
                     if (args[0].equalsIgnoreCase("data")) {
+                        if (!data.equals(key)) {
+                            /**
+                             * @TODO send Message error
+                             */
 
+                            player.sendTitle("§cError", "§cYour key is not valid", 10, 10, 10);
+                        } else {
+                            /**
+                             * @TODO send Message confirmation
+                             */
+
+                            player.sendTitle("§aSuccess", "§aYour key is valid", 10, 10, 10);
+                        }
                     }
 
                     if (args[0].equalsIgnoreCase("admin")) {
-
                     }
                 }
             }
