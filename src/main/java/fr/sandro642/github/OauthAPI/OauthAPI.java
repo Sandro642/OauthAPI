@@ -5,6 +5,8 @@ import fr.sandro642.github.misc.OauthGui;
 import fr.sandro642.github.yaml.RegisterYaml;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import fr.sandro642.github.core.Action;
+
 
 import java.io.IOException;
 
@@ -13,7 +15,7 @@ public class  OauthAPI {
     private static OauthAPI instance;
 
     private Plugin plugin;
-    public OauthAPI(Plugin plugin) {
+    private OauthAPI(Plugin plugin) {
         this.plugin = plugin;
         Oauth.setPlugin(plugin);
         RegisterYaml.setPlugin(plugin);
@@ -31,6 +33,10 @@ public class  OauthAPI {
         RegisterYaml.registerYamlStatus();
         RegisterYaml.registerYamlSecret();
         plugin.getServer().getPluginCommand("oauth").setExecutor(new Oauth());
+    }
+
+    public void callMethod(Action action) {
+        action.call();
     }
 
 

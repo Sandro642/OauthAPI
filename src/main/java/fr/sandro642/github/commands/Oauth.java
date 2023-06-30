@@ -1,6 +1,7 @@
 package fr.sandro642.github.commands;
 
 import fr.sandro642.github.OauthAPI.OauthAPI;
+import fr.sandro642.github.core.Action;
 import fr.sandro642.github.yaml.RegisterYaml;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,6 +19,8 @@ public class Oauth implements CommandExecutor {
     }
 
     private static List<String> data = RegisterYaml.configyamlplayerdatasecret.getStringList("key");
+
+    private static Action action;
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -81,6 +84,8 @@ public class Oauth implements CommandExecutor {
                              */
 
                             player.sendTitle("§aSuccess", "§aYour key is valid", 10, 10, 10);
+
+                            action.call();
                         }
                     }
 
