@@ -9,6 +9,8 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.List;
 
+import static fr.sandro642.github.yaml.RegisterYaml.configuration;
+
 public class Oauth implements CommandExecutor {
 
     private static Plugin plugin;
@@ -22,6 +24,7 @@ public class Oauth implements CommandExecutor {
         Player player = (Player) sender;
 
         if (label.equalsIgnoreCase("oauth")) {
+            if (player.hasPermission("oauth.admin")) return true;
             if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("gui")) {
                     //OauthAPI.getOauth().oauthGui(player);
@@ -38,18 +41,17 @@ public class Oauth implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("register")) {
 
-                   // String key = args[1];
+                   String key = args[1];
 
-                   // List<String> uuids = RegisterYaml.configyamlplayerdatasecret.getStringList("players");
+                   List<String> data = RegisterYaml.configyamlplayerdatasecret.getStringList("key");
 
-                   // if() {
-                   // }
+                    if(!data.contains(key)) {
+                        data.add(key);
+                    }
 
                 }
 
                 if (args[0].equalsIgnoreCase("secret")) {
-                    if (player.hasPermission("oauth.admin")) return true;
-
                     if (args[0].equalsIgnoreCase("data")) {
 
                     }
