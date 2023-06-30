@@ -10,10 +10,17 @@ import java.io.IOException;
 
 public class RegisterYaml {
 
-    private FileConfiguration configuration;
+    public static FileConfiguration configurationdatastatus;
+    public static FileConfiguration configurationplayerdatasecret;
 
     public static Configuration configyamldatastatus;
     public static Configuration configyamlplayerdatasecret;
+
+    public static File filedatastatus;
+    public static File fileplayerdatasecret;
+
+
+
 
     private static Plugin plugin;
     public static void setPlugin(Plugin plugin) {
@@ -21,20 +28,21 @@ public class RegisterYaml {
     }
 
     public static void registerYamlStatus() throws IOException {
-        File file = new File(plugin.getDataFolder(), "datastatus.yml");
+        filedatastatus = new File(plugin.getDataFolder(), "datastatus.yml");
 
-        configyamldatastatus = YamlConfiguration.loadConfiguration(file);
+        configyamldatastatus = YamlConfiguration.loadConfiguration(filedatastatus);
+
 
         plugin.getDataFolder().mkdirs();
-        file.createNewFile();
+        filedatastatus.createNewFile();
     }
 
     public static void registerYamlSecret() throws IOException {
-        File file = new File(plugin.getDataFolder(), "playerdatasecret.yml");
+        fileplayerdatasecret = new File(plugin.getDataFolder(), "playerdatasecret.yml");
 
-        configyamlplayerdatasecret = YamlConfiguration.loadConfiguration(file);
+        configyamlplayerdatasecret = YamlConfiguration.loadConfiguration(fileplayerdatasecret);
 
         plugin.getDataFolder().mkdirs();
-        file.createNewFile();
+        fileplayerdatasecret.createNewFile();
     }
 }
