@@ -11,3 +11,5 @@
 ### L'API OAuth que nous proposons met l'accent sur la sécurité et la protection des données des utilisateurs. Elle utilise des protocoles de cryptage robustes pour stocker les informations d'identification et les données sensibles, et elle assure une communication sécurisée entre le client et le serveur. De plus, elle met en œuvre des mécanismes de protection contre les attaques courantes telles que l'injection SQL, les attaques par force brute, etc.
 
 ### En résumé, notre API OAuth fournit une méthode fiable et sécurisée pour s'authentifier avec un mot de passe et le configurer sur un serveur Minecraft ou autre plateforme de jeu. Elle offre aux utilisateurs une expérience d'authentification fluide et sécurisée, tout en garantissant la confidentialité de leurs informations personnelles.
+
+Fini le : 04/07/2023
