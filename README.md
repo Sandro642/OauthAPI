@@ -13,3 +13,19 @@
 ### En résumé, notre API OAuth fournit une méthode fiable et sécurisée pour s'authentifier avec un mot de passe et le configurer sur un serveur Minecraft ou autre plateforme de jeu. Elle offre aux utilisateurs une expérience d'authentification fluide et sécurisée, tout en garantissant la confidentialité de leurs informations personnelles.
 
 Fini le : 04/07/2023
+
+```
+ <repositories>
+    <repository>
+        <id>Sandro642</id>
+        <url>https://sandro642.github.io/maven</url>
+    </repository>
+</repositories>
+<dependencies>
+    <dependency>
+        <groupId>fr.Sandro642</groupId>
+        <artifactId>oauthapi</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
+```
